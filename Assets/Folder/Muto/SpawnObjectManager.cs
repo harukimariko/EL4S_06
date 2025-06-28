@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class SpawnObjectManager : MonoBehaviour
 {
-    public List<GameObject> SpawmObjectList;    //生成するおぶじぇくとりすと
+    [SerializeField] List<GameObject> SpawmObjectList;    //生成するおぶじぇくとりすと
+    
+    [SerializeField] List<int> SpawnObjectID;                    //IDを管理するようSpawner個々人が時間を管理して、スポーンする時間になったらこのIDに対応するプレハブをSpawnerに送る
+    
+    [SerializeField] List<GameObject> spawnerList;            //フィールドに設置するスポナー管理用
 
-    public List<int> SpawnObjectID;                    //IDを管理するようSpawner個々人が時間を管理して、スポーンする時間になったらこのIDに対応するプレハブをSpawnerに送る
+    [SerializeField] int blockID;
 
-    public List<GameObject> spawnerList;            //フィールドに設置するスポナー管理用
+
+
 
     private static SpawnObjectManager _instance;
     public static SpawnObjectManager Instance
