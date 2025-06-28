@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Vector3 _speed = Vector3.one;
     private Rigidbody _rigidbody;
-    public bool _isReverse = false;    // 反転のフラグ
+    public bool _isReverse = false;     // 反転のフラグ
+    public Item _currentItem = null;    // アイテム
 
     private void Awake()
     {
