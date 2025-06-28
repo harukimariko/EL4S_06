@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _endPos: -10
-  _speed: 0.01
+  _speed: 0.04
 --- !u!54 &6496689266282885694
 Rigidbody:
   m_ObjectHideFlags: 0
