@@ -17,4 +17,14 @@ public class Obstacles : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // 押し出す
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 100);
+            Debug.Log("Playerに衝突しました。押し出します。");
+        }
+    }
 }

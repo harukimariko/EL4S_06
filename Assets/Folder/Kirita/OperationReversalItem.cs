@@ -8,11 +8,13 @@ public class OperationReversalItem : Item
 
     public override void Use(in Player player)
     {
-        StartCoroutine(Return(player));
+        Player target = GameManager.Instance.RightPlayer == player ? GameManager.Instance.LeftPlayer : GameManager.Instance.RightPlayer ;
+        StartCoroutine(Return(target));
     }
 
     private IEnumerator Return(Player player)
     {
+
         player._isReverse = true;
         player._direction = -player._direction;
         yield return new WaitForSeconds(_duration);
