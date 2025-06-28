@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     private Rigidbody _rigidbody;
     public bool _isReverse = false;     // 反転のフラグ
     public int _direction = 1;
-
     public Item _currentItem = null;    // アイテム
 
     private void Awake()
@@ -22,21 +21,30 @@ public class Player : MonoBehaviour
     // 惣佐
     [Header("操作関連")]
     [Range(0.0f, 10.0f)] public float _speedRatio = 3.0f;
+    [Range(0.0f, 10.0f)] public float _speedMax = 3.0f;
     [SerializeField, Range(0.0f, 5.0f)] public float _jumpRatio = 1.0f;
+
+    [SerializeField] List<GameObject> _list = new List<GameObject>();
 
     private void Update()
     {
         float horizontal = Input.GetAxis("Horizontal") * _direction;
         float vertical = Input.GetAxis("Vertical") * _direction;
 
-        // 速度の保存
-        Vector3 velocity = _rigidbody.velocity;
-
         // 例：キャラの移動に使う
         Vector3 direction = new Vector3(horizontal, 0, vertical) * _speedRatio;
         _rigidbody.AddForce(direction, ForceMode.Acceleration);
 
-        _rigidbody.velocity += velocity;
+        // 速度の保存
+        Vector3 velocity = new Vector3(_rigidbody.velocity.x, 0.0f, _rigidbody.velocity.z);
+
+        // 最大速度制限
+        if (velocity.magnitude > _speedMax)
+        {
+            velocity = velocity.normalized * _speedMax;
+
+            _rigidbody.velocity = velocity + new Vector3(0.0f, _rigidbody.velocity.y, 0.0f);
+        }
 
         if (Input.GetKeyDown(KeyCode.U)) JumpForce(3.0f);
 
