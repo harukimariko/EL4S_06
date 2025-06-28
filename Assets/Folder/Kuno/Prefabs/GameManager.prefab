@@ -49,5 +49,5 @@ MonoBehaviour:
   _gameObject3: {fileID: 3995073908680390931, guid: 291ab91ac0799b44e8765f14f6a9640d, type: 3}
   _gameObject4: {fileID: 1103645240778503803, guid: 78c8ddac9e0e5b445ae84bec13df60f6, type: 3}
   _gameObject5: {fileID: 3031859450387978371, guid: d3a994ab4bf48134b9fa7da11f63ecd2, type: 3}
-  _spawnTimer: 20
+  _spawnTimer: 3
   _timer: 0
