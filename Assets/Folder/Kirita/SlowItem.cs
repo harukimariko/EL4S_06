@@ -11,7 +11,8 @@ public class SlowItem : Item
 
     public override void Use(in Player player)
     {
-        StartCoroutine(Return(player));
+        Player target = GameManager.Instance.RightPlayer == player ? GameManager.Instance.LeftPlayer : GameManager.Instance.RightPlayer;
+        StartCoroutine(Return(target));
     }
 
     private IEnumerator Return(Player player)

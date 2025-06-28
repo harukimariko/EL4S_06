@@ -1192,14 +1192,8 @@ MonoBehaviour:
   _isReverse: 0
   _direction: 1
   _currentItem: {fileID: 0}
-  _speedRatio: 5
-  _speedMax: 3
+  _speedRatio: 1.6
   _jumpRatio: 1
-  _jumpList:
-  - {fileID: 8617359747503763220, guid: 489ee7de704917f408347fa011a480db, type: 3}
-  - {fileID: 9082729484857574359, guid: db3165684c0d9a24992b63911d050876, type: 3}
-  _onGroundList:
-  - {fileID: 6360668358189942659, guid: 0af6ba0d1b8725742ac898a9168cc481, type: 3}
 --- !u!1 &9028019586980965566
 GameObject:
   m_ObjectHideFlags: 0
