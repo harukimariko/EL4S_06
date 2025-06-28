@@ -39,8 +39,9 @@ public class Player : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         // —áFƒLƒƒƒ‰‚ÌˆÚ“®‚Ég‚¤
-        Vector3 direction = new Vector3(horizontal, 0, vertical);
+        Vector3 direction = new Vector3(horizontal, 0, vertical) * _speedRatio;
         transform.Translate(direction * _speedRatio * Time.deltaTime);
+        //_rigidbody.AddForce(direction, ForceMode.Acceleration);
     }
 
     private void FixedUpdate()
