@@ -10,15 +10,21 @@ public class ObstaclesSpanwner : MonoBehaviour
     [SerializeField] GameObject _gameObject4;
     [SerializeField] GameObject _gameObject5;
 
-    [SerializeField] float _spawnTimer = 10;
-    [SerializeField] float _timer = 0;
+    [SerializeField] float _spawnTimer = 3;
+    [SerializeField] float _countDownTimer = 0;
+
+    private void Awake()
+    {
+        //  タイマーセット
+        _countDownTimer = _spawnTimer;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        _timer += Time.deltaTime * _spawnTimer;
+        _countDownTimer -= Time.deltaTime;
 
-        if (_timer > _spawnTimer)
+        if (_countDownTimer <=0)
         {
             int rand = Random.Range(1, 6);
 
@@ -41,7 +47,7 @@ public class ObstaclesSpanwner : MonoBehaviour
                     break;
             }
 
-            _timer = 0;
+            _countDownTimer = _spawnTimer;
         }
     }
 }
