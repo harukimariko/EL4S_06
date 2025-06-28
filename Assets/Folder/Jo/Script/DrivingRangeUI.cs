@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class DrivingRangeUI : MonoBehaviour
 {
     [SerializeField] public GameObject player;
-
-    private Text text;
+    [SerializeField] public Text text;
     private float range;
 
     private Vector3 lastPos;
@@ -15,7 +14,6 @@ public class DrivingRangeUI : MonoBehaviour
 
     void Start()
     {
-        text=GetComponent<Text>();
         range = 0f;
         lastPos = Vector3.zero;
         nowPos = Vector3.zero;
