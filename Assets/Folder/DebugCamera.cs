@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class DebugCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Transform _targetTransform;
+    [SerializeField, Range(0.0f, 1.0f)] private float _lerpStrength = 0.8f;
+    [SerializeField] bool _saveOffset;
+    [SerializeField] Vector3 _offsetPosition;
+
+    private void Start()
     {
-        
+        if (_saveOffset)
+        {
+            _offsetPosition = transform.position - _targetTransform.position;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+
+    }
+
+    private void LateUpdate()
+    {
+        if (_targetTransform != null)
+        {
+            Vector3 targetPosition = _targetTransform.position + _offsetPosition;
+            Vector3 position = Vector3.Lerp( targetPosition, transform.position, _lerpStrength);
+            transform.position = position;
+        }
     }
 }

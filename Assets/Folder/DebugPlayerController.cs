@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class DebugPlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] Vector3 _addForce = Vector3.zero;
+    [SerializeField, Range(0.0f, 20.0f)] float _speedRatio = 5.0f;
+
+    private void Update()
     {
-        
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        // ó·ÅFÉLÉÉÉâÇÃà⁄ìÆÇ…égÇ§
+        Vector3 direction = new Vector3(horizontal, 0, vertical);
+        transform.Translate(direction * _speedRatio * Time.deltaTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         
     }
