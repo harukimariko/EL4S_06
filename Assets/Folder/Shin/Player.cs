@@ -24,7 +24,8 @@ public class Player : MonoBehaviour
     [Range(0.0f, 10.0f)] public float _speedMax = 3.0f;
     [SerializeField, Range(0.0f, 5.0f)] public float _jumpRatio = 1.0f;
 
-    [SerializeField] List<GameObject> _list = new List<GameObject>();
+    [SerializeField] List<GameObject> _jumpList = new List<GameObject>();
+    [SerializeField] List<GameObject> _onGroundList = new List<GameObject>();
 
     private void Update()
     {
@@ -55,13 +56,22 @@ public class Player : MonoBehaviour
         Vector3 jumpForce = new Vector3(0.0f, force, 0.0f);
         _rigidbody.AddForce(jumpForce, ForceMode.Impulse);
 
+        foreach (GameObject go in _jumpList)
+        {
+            Vector3 position = transform.position + go.transform.position;
+            GameObject jumpObject = Instantiate(go, position, Quaternion.identity);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-
+            foreach (GameObject go in _onGroundList)
+            {
+                Vector3 position = transform.position + go.transform.position;
+                GameObject onGround = Instantiate(go, position, Quaternion.identity);
+            }
         }
     }
 }
