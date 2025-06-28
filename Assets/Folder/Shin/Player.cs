@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Vector3 _speed = Vector3.one;
     private Rigidbody _rigidbody;
-    public bool _isReverse = false;    // 反転のフラグ
+    public bool _isReverse = false;     // 反転のフラグ
+    public Item _currentItem = null;    // アイテム
 
     private void Awake()
     {
@@ -38,8 +39,9 @@ public class Player : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         // 例：キャラの移動に使う
-        Vector3 direction = new Vector3(horizontal, 0, vertical);
+        Vector3 direction = new Vector3(horizontal, 0, vertical) * _speedRatio;
         transform.Translate(direction * _speedRatio * Time.deltaTime);
+        //_rigidbody.AddForce(direction, ForceMode.Acceleration);
     }
 
     private void FixedUpdate()
