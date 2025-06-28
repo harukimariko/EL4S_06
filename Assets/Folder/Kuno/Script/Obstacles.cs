@@ -17,12 +17,13 @@ public class Obstacles : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             // 押し出す
-            other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * _speed);
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.forward * 100);
             Debug.Log("Playerに衝突しました。押し出します。");
         }
     }

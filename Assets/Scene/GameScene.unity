@@ -123,12 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &26354068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8283017635641500187, guid: cfbaecccc1b798843afddf43218901a3, type: 3}
+  m_PrefabInstance: {fileID: 898404277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &26354069 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9063130556845326591, guid: cfbaecccc1b798843afddf43218901a3, type: 3}
   m_PrefabInstance: {fileID: 898404277}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 26354068}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7169ba2c3f25ef54ca4c59f2343bd11e, type: 3}
@@ -144,7 +149,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 752706234127582213, guid: e05dcb2d8e3c4e74ea9b2787e290a248, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.3
+      value: -3.16
       objectReference: {fileID: 0}
     - target: {fileID: 752706234127582213, guid: e05dcb2d8e3c4e74ea9b2787e290a248, type: 3}
       propertyPath: m_LocalPosition.y
@@ -551,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9063130556845326591, guid: cfbaecccc1b798843afddf43218901a3, type: 3}
       propertyPath: _speedRatio
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -689,7 +694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9063130556845326591, guid: cfbaecccc1b798843afddf43218901a3, type: 3}
       propertyPath: _speedRatio
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -850,6 +855,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6721359983717964648, guid: 809af2fdffb22204dbaceb0c6a3b97fe, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 26354069}
+    - target: {fileID: 7372208301758341010, guid: 809af2fdffb22204dbaceb0c6a3b97fe, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 26354068}
+    - target: {fileID: 8436846120451876869, guid: 809af2fdffb22204dbaceb0c6a3b97fe, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 2060677742}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
