@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// プレイヤーの移動速度
     /// </summary>
-    public Vector2 Speed
+    public Vector3 Speed
     {
         get => _speed;
         set => _speed = value;
