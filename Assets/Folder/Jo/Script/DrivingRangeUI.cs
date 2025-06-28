@@ -35,7 +35,7 @@ public class DrivingRangeUI : MonoBehaviour
     {
         float distance = Vector3.Distance(lastPos, nowPos);
         range += distance;
-        range += 2f * Time.deltaTime;
+        range += 4f * Time.deltaTime;
 
         text.text = (int)range+ " m";
 
