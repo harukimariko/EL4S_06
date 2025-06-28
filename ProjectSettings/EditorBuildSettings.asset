@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Folder/Suzuki/Scene/Fumiya_Title.unity
+    guid: e0a0c207839cf2346be0dee22068c3ac
+  - enabled: 1
+    path: Assets/Folder/Suzuki/Scene/Fumiya_Result.unity
+    guid: 959a11fcae8c8e540be9d2a023fd564e
   m_configObjects: {}
