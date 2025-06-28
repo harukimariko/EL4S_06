@@ -215,8 +215,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6721359983717964648, guid: 809af2fdffb22204dbaceb0c6a3b97fe, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 2062708326}
     - target: {fileID: 7372208301758341010, guid: 809af2fdffb22204dbaceb0c6a3b97fe, type: 3}
       propertyPath: player
+      value: 
+      objectReference: {fileID: 2062708326}
+    - target: {fileID: 8436846120451876869, guid: 809af2fdffb22204dbaceb0c6a3b97fe, type: 3}
+      propertyPath: Player
       value: 
       objectReference: {fileID: 2062708326}
     m_RemovedComponents: []
